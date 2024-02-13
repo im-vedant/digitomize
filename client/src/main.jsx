@@ -11,7 +11,14 @@ import InstallPWAButton from "@components/globals/InstallPWAButton";
 
 import { Helmet } from "react-helmet";
 import metaData from "./metaData.json";
-
+import { PostHogProvider} from 'posthog-js/react'
+import posthog from 'posthog-js';
+posthog.init(
+  import.meta.env.VITE_REACT_APP_PUBLIC_POSTHOG_KEY,
+  {
+    api_host: import.meta.env.VITE_REACT_APP_PUBLIC_POSTHOG_HOST,
+  }
+);
 const location = window.location.pathname;
 const currentPageData = metaData[location];
 
@@ -22,6 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RecoilRoot>
     <InstallPWAButton />
+<<<<<<< Updated upstream
     <App />
     </RecoilRoot>
   </React.StrictMode>,
