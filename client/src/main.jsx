@@ -32,6 +32,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 <<<<<<< Updated upstream
     <App />
     </RecoilRoot>
+=======
+    <PostHogProvider 
+     client={posthog}
+    >
+      <App/>
+      </PostHogProvider>
+>>>>>>> Stashed changes
   </React.StrictMode>,
 );
 
